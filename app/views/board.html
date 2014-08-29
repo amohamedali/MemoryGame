@@ -1,0 +1,13 @@
+<table>
+  <tr ng-repeat="i in counterArr">
+    <td ng-repeat="card in cards.slice(i * perRow, (i + 1) * perRow)">
+      <div class="cardCont" ng-hide="!card.flipped">
+        <img ng-src="{{card.imgUrl}}" class="card">
+      </div>
+      <div class="cardCont" ng-hide="card.flipped">
+        <img ng-src="{{hiddenImageUrl}}" ng-click="flipCard(card); endGame()" class="card">
+      </div>
+    </td>
+  </tr>
+</table>
+

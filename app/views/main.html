@@ -1,0 +1,24 @@
+<div  ng-show="greetings">
+  <h3>Your score {{score}}</h3>
+
+  <div class="alert alert-success" role="alert">Well play !!! try again ?</div>
+</div>
+
+<div ng-show="startGame">
+  Size :
+  <button class="btn btn-default btn-sm" ng-click="setSize(16)">Small board</button>
+  <button class="btn btn-default btn-lg" ng-click="setSize(32)">Big Board</button>
+  <br><br>
+  Speed :
+  <button class="btn btn-primary" ng-click="setSpeed(2000)">Slow</button>
+  <button class="btn btn-warning" ng-click="setSpeed(1000)">Normal</button>
+  <button class="btn btn-danger" ng-click="setSpeed(500)">Fast</button>
+  <br><br>
+  <button class="btn btn-success" ng-click="initGame()">Start</button>
+</div>
+
+<div ng-show="!startGame">
+  <h3>Your score {{score}}   |   Remaining cards {{cardsLeft}} </h3>
+  <button class="btn btn-danger pull-right" ng-click="endGame(true)">New Game</button>
+  <board> </board>
+</div>
